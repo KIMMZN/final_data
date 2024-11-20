@@ -1,0 +1,146 @@
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder
+$ git init
+Initialized empty Git repository in C:/Users/13/Desktop/folder/파이널프로젝트/gitfolder/.git/
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (master)
+$ git fetch
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (master)
+$ git remote add origin
+usage: git remote add [<options>] <name> <url>
+
+    -f, --[no-]fetch      fetch the remote branches
+    --[no-]tags           import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --[no-]track <branch>
+                          branch(es) to track
+    -m, --[no-]master <branch>
+                          master branch
+    --[no-]mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (master)
+$ git remote add origin https://github.com/Abyssmash/CIS.git
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (master)
+$ git pull origin main
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 10 (delta 1), reused 6 (delta 1), pack-reused 0 (from 0)
+Unpacking objects: 100% (10/10), 2.15 KiB | 59.00 KiB/s, done.
+From https://github.com/Abyssmash/CIS
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (master)
+$ git add *
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (master)
+$ git commit -m 'kim'
+[master f832ebf] kim
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (master)
+$ git checkout -m 'kimsion'
+error: pathspec 'kimsion' did not match any file(s) known to git
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (master)
+$ ^Ct checkout -m 'kimsion'
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (master)
+$ git checkout -b 'kimsion'
+Switched to a new branch 'kimsion'
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (kimsion)
+$ git add *
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (kimsion)
+$ git commit --rebase 'kim'
+error: unknown option `rebase'
+usage: git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+                  [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>)]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                  [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]
+                  [--] [<pathspec>...]
+
+    -q, --[no-]quiet      suppress summary after successful commit
+    -v, --[no-]verbose    show diff in commit message template
+
+Commit message options
+    -F, --[no-]file <file>
+                          read message from file
+    --[no-]author <author>
+                          override author for commit
+    --[no-]date <date>    override date for commit
+    -m, --[no-]message <message>
+                          commit message
+    -c, --[no-]reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --[no-]reuse-message <commit>
+                          reuse message from specified commit
+    --[no-]fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --[no-]squash <commit>
+                          use autosquash formatted message to squash specified commit
+    --[no-]reset-author   the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --[no-]signoff    add a Signed-off-by trailer
+    -t, --[no-]template <file>
+                          use specified template file
+    -e, --[no-]edit       force edit of commit
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    --[no-]status         include status in commit message template
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --[no-]all        commit all changed files
+    -i, --[no-]include    add specified files to index for commit
+    --[no-]interactive    interactively add files
+    -p, --[no-]patch      interactively add changes
+    -o, --[no-]only       commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --verify              opposite of --no-verify
+    --[no-]dry-run        show what would be committed
+    --[no-]short          show status concisely
+    --[no-]branch         show branch information
+    --[no-]ahead-behind   compute full ahead/behind values
+    --[no-]porcelain      machine-readable output
+    --[no-]long           show status in long format (default)
+    -z, --[no-]null       terminate entries with NUL
+    --[no-]amend          amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    --post-rewrite        opposite of --no-post-rewrite
+    -u, --[no-]untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (kimsion)
+$ git commit -m 'kim'
+On branch kimsion
+nothing to commit, working tree clean
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (kimsion)
+$ git push origin "kimsion"
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 253 bytes | 253.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Abyssmash/CIS.git
+   cf99470..f832ebf  kimsion -> kimsion
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitfolder (kimsion)
+$

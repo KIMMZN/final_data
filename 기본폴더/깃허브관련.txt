@@ -1,0 +1,137 @@
+분석 가설 작업 , 설명가능하게
+
+1. git, github 차이 구분.
+2. remote, local 차이 구분 및 이해.
+  2- pull하고 local branch 삭제?
+3. push : add commit
+   pull
+
+4. branch 전략 : master vs main  == 의미부여자 : 프로젝트 담당자.
+
+A   A-1        a1개발자 push   - A1  - pull request -- 자동머지 --ㄼ ㅡㅡ 머지
+     A-2
+     A-3
+
+
+
+프로젝트 깃허브
+
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitsion
+$ git init
+Initialized empty Git repository in C:/Users/13/Desktop/folder/파이널프로젝트/gitsion/.git/
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitsion (master)
+$ git remote -v
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitsion (master)
+$ git remote add origin https://github.com/Abyssmash/CIS.git
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitsion (master)
+$ git remote -v
+origin  https://github.com/Abyssmash/CIS.git (fetch)
+origin  https://github.com/Abyssmash/CIS.git (push)
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitsion (master)
+$ git branch
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitsion (master)
+$ git branch -m gitsion
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitsion (gitsion)
+$ git remote -v
+origin  https://github.com/Abyssmash/CIS.git (fetch)
+origin  https://github.com/Abyssmash/CIS.git (push)
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitsion (gitsion)
+$ git pull origin main
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 10 (delta 1), reused 6 (delta 1), pack-reused 0 (from 0)
+Unpacking objects: 100% (10/10), 2.15 KiB | 73.00 KiB/s, done.
+From https://github.com/Abyssmash/CIS
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitsion (gitsion)
+$ git add *
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitsion (gitsion)
+$ git commit -m "siontest"
+[gitsion 6fb528d] siontest
+ 1 file changed, 1 insertion(+)
+ create mode 100644 gitsion.txt
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitsion (gitsion)
+$ git push -m origin gitsion
+error: unknown switch `m'
+usage: git push [<options>] [<repository> [<refspec>...]]
+
+    -v, --[no-]verbose    be more verbose
+    -q, --[no-]quiet      be more quiet
+    --[no-]repo <repository>
+                          repository
+    --[no-]all            push all branches
+    --[no-]branches       alias of --all
+    --[no-]mirror         mirror all refs
+    -d, --[no-]delete     delete refs
+    --[no-]tags           push tags (can't be used with --all or --branches or --mirror)
+    -n, --[no-]dry-run    dry run
+    --[no-]porcelain      machine-readable output
+    -f, --[no-]force      force updates
+    --[no-]force-with-lease[=<refname>:<expect>]
+                          require old value of ref to be at this value
+    --[no-]force-if-includes
+                          require remote updates to be integrated locally
+    --[no-]recurse-submodules (check|on-demand|no)
+                          control recursive pushing of submodules
+    --[no-]thin           use thin pack
+    --[no-]receive-pack <receive-pack>
+                          receive pack program
+    --[no-]exec <receive-pack>
+                          receive pack program
+    -u, --[no-]set-upstream
+                          set upstream for git pull/status
+    --[no-]progress       force progress reporting
+    --[no-]prune          prune locally removed refs
+    --no-verify           bypass pre-push hook
+    --verify              opposite of --no-verify
+    --[no-]follow-tags    push missing but relevant tags
+    --[no-]signed[=(yes|no|if-asked)]
+                          GPG sign the push
+    --[no-]atomic         request atomic transaction on remote side
+    -o, --[no-]push-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+
+13@DESKTOP-EQI4N4V MINGW64 ~/Desktop/folder/파이널프로젝트/gitsion (gitsion)
+$ git push -u origin gitsion
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 355 bytes | 355.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Abyssmash/CIS.git
+   cf99470..6fb528d  gitsion -> gitsion
+branch 'gitsion' set up to track 'origin/gitsion'.
+
+
+깃허브
+git init
+git remote -v
+git remote add origin https://github.com/Abyssmash/CIS.git
+git pull origin main
+
+<삭제
+git push origin -d gitsion
+
+git add *
+
+git commit -m "asdf"
+
+git push origin sionkim
+git push -m origin gitsion
